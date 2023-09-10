@@ -3,14 +3,15 @@ const personas = [];
 function mostrarPersonas() {
   console.log("Mostrar persona...");
   let texto = "";
+  let idNumber = 0;
+
 
   for (let persona of personas) {
     console.log(persona);
+    idNumber++;
     let newEle = document.createElement("ul");
 
-    // texto += `${persona.nombre} ${persona.apellido} <i class="fa-solid fa-trash"></i></li>`;
-
-    texto += `<li><div class="items" id='deletePerson' >${persona.nombre} ${persona.apellido} <i class="fa-solid fa-trash" id= 'trashIcon' onClick='deletePerson()'></i></div></li>`;
+    texto += `<li><div class="items" id='delPerson' >${idNumber} ${persona.nombre} ${persona.apellido} <i class="fa-solid fa-trash" id= 'trashIcon' onClick='deletePerson()'></i></div></li>`;
     newEle.innerHTML = texto;
   }
 
@@ -38,8 +39,12 @@ function agregarPersona() {
 
 document.getElementById("trashIcon").addEventListener('click', deletePerson);
 
-function deletePerson(evento){
+function deletePerson(){
   console.log("Hola Mundo");
+  const itemss = document.getElementsByClassName("items");
+  const persona = document.getElementById("personas");
+  persona.remove(itemss);
+
 }
 
 

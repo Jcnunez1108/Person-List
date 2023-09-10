@@ -39,13 +39,15 @@ html {
   .items{
     display: flex;
     justify-content: space-between;
+    
   }
 
   #personas{
+    margin-left: 2px;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    
+    list-style-type: none;
   }
   
   .fa-solid, fas{
