@@ -38,10 +38,14 @@ function addPerson() {
     form.reset();
 
   } else {
-    console.log("they have no information");
-    document.getElementById("alertMessage").innerHTML = "they have no information";
-  }
+    alertMess = document.getElementById("alertMessage");
 
+    alertMess.innerHTML = "they have no information";
+    setTimeout(()=>{
+      alertMess.style.display = 'none';
+    }, 3000);
+  }
+  
 }
 
 
