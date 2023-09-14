@@ -1,53 +1,45 @@
-const personas = [];
+const personArr = [];
 
-function mostrarPersonas() {
-  console.log("Mostrar persona...");
-  let texto = "";
+function showPerson() {
+  let text = "";
   let idNumber = 0;
 
 
-  for (let persona of personas) {
-    console.log(persona);
+  for (let person of personArr) {
+    console.log(person);
     idNumber++;
     let newEle = document.createElement("ul");
 
-    texto += `<li><div class="items">${idNumber} ${persona.nombre} ${persona.apellido} <i class="fa-solid fa-trash" id= 'trashIcon' onclick="deletePerson(${persona.id})"></i></div></li>`;
-    newEle.innerHTML = texto;
+    text += `<li><div class="items">${idNumber} ${person.name} ${person.lastName} <i class="fa-solid fa-trash" id= 'trashIcon' onclick="deletePerson(${person.id})"></i></div></li>`;
+    newEle.innerHTML = text;
   }
 
-  document.getElementById("personas").innerHTML = texto;
+  document.getElementById("personP").innerHTML = text;
   
 }
 const deletePerson = (id) => {
   console.log(id)
-  let deleteId = personas.findIndex( (persona) => persona.id === id);
-  personas.splice(deleteId, 1);
-  mostrarPersonas();
+  let deleteId = personArr.findIndex( (person) => person.id === id);
+  personArr.splice(deleteId, 1);
+  showPerson();
 }
 
-function agregarPersona() {
-  const forma = document.forms["forma"];
-  const nombre = forma["nombre"];
-  const apellido = forma["apellido"];
+function addPerson() {
+  const form = document.forms["form"];
+  const name = form["name"];
+  const lastName = form["lastName"];
 
-  if (nombre.value != "" && apellido.value != "") {
-    const persona = new Persona(nombre.value, apellido.value);
+  if (name.value != "" && lastName.value != "") {
+    const person = new PersonP(name.value, lastName.value);
 
-    console.log(persona);
-    personas.push(persona); 
-    mostrarPersonas();
+    console.log(person);
+    personArr.push(person); 
+    showPerson();
   } else {
-    console.log("No tiene informacion");
-    document.getElementById("mensajeRror").innerHTML = "No tiene informacion";
+    console.log("they have no information");
+    document.getElementById("alertMessage").innerHTML = "they have no information";
   }
 
 }
-
-document.getElementById("trashIcon").addEventListener('click', deletePerson);
-
-
-
-
-
 
 

@@ -1,24 +1,24 @@
-class Persona {
+class PersonP {
   static personId = 0;
-  constructor(nombre, apellido) {
+  constructor(name, lastName) {
     
-    this._nombre = nombre;
-    this._apellido = apellido;
-    this._id = ++Persona.personId;
+    this._name = name;
+    this._lastName = lastName;
+    this._id = ++PersonP.personId;
   }
   
-  get nombre() {
-    return this._nombre;
+  get name() {
+    return this._name;
   }
-  set nombre(nombre) {
-    this._nombre = nombre;
+  set name(name) {
+    this._name = name;
   }
 
-  get apellido() {
-    return this._apellido;
+  get lastName() {
+    return this._lastName;
   }
-  set apellido(apellido) {
-    this._apellido = apellido;
+  set lastName(lastName) {
+    this._lastName = lastName;
   }
   get id(){
     return this._id;

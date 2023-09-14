@@ -6,30 +6,30 @@
     <title>List of person</title>
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body onload="mostrarPersonas()">
-    <div class="contenedor" id="cabecero">
+<body onload="showPerson()">
+    <div class="container" id="headEr">
         <h1>Listado de personas</h1>
         
     </div>
 
-    <div class="contenedor">
-        <div class="elemento">
+    <div class="container">
+        <div class="elementT">
             
-            <ul id="personas">
+            <ul id="personP">
                 
             </ul>
-              
+            
         </div>
     </div> 
 
-    <div class="contenedor">
+    <div class="container">
         <div style='text-align: center;'>
-            <button style="cursor:pointer" onclick="agregarPersona()">+</button>
+            <button style="cursor:pointer" onclick="addPerson()">+</button>
         </div>
-        <form id="forma">
-            <input type="text" id="nombre" placeholder="Nombre">
-            <input type="text" id="apellido" placeholder="Apellido">
-            <div id="mensajeRror"></div>
+        <form id="form">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="lastName" placeholder="LastName">
+            <div id="alertMessage"></div>
         </form>
         
     </div>
