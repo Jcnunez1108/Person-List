@@ -31,15 +31,18 @@ function addPerson() {
 
   if (name.value != "" && lastName.value != "") {
     const person = new PersonP(name.value, lastName.value);
-
+    
     console.log(person);
     personArr.push(person); 
     showPerson();
+    form.reset();
+
   } else {
     console.log("they have no information");
     document.getElementById("alertMessage").innerHTML = "they have no information";
   }
 
 }
+
 
 
