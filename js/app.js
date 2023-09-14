@@ -11,12 +11,18 @@ function mostrarPersonas() {
     idNumber++;
     let newEle = document.createElement("ul");
 
-    texto += `<li><div class="items" id='delPerson' >${idNumber} ${persona.nombre} ${persona.apellido} <i class="fa-solid fa-trash" id= 'trashIcon' onClick='deletePerson()'></i></div></li>`;
+    texto += `<li><div class="items">${idNumber} ${persona.nombre} ${persona.apellido} <i class="fa-solid fa-trash" id= 'trashIcon' onclick="deletePerson(${persona.id})"></i></div></li>`;
     newEle.innerHTML = texto;
   }
 
   document.getElementById("personas").innerHTML = texto;
   
+}
+const deletePerson = (id) => {
+  console.log(id)
+  let deleteId = personas.findIndex( (persona) => persona.id === id);
+  personas.splice(deleteId, 1);
+  mostrarPersonas();
 }
 
 function agregarPersona() {
@@ -38,14 +44,6 @@ function agregarPersona() {
 }
 
 document.getElementById("trashIcon").addEventListener('click', deletePerson);
-
-function deletePerson(){
-  console.log("Hola Mundo");
-  const itemss = document.getElementsByClassName("items");
-  const persona = document.getElementById("personas");
-  persona.remove(itemss);
-
-}
 
 
 
